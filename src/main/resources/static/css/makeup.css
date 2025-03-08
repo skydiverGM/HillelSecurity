@@ -1,0 +1,53 @@
+main{
+    width: 500px;
+    color: #3c951c;
+    padding-bottom: 50px;
+    border-radius: 25px;
+    position: absolute;
+    left: 35%;
+}
+.registration, .login{
+    position: relative;
+    background-color: #ffe49b;
+    left: 30%;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.error {
+    left: 260px;
+    position: absolute;
+    color: red;
+    font-size: 14px;
+}
+.user-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.user-header, .user-row {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-header {
+    background-color: #cceeff;
+    font-weight: bold;
+}
+
+.user-row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.user-cell {
+    flex: 1;
+    padding: 5px;
+}

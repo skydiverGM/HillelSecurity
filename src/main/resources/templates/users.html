@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+
+    <link rel="stylesheet" th:href="@{/css/makeup.css}">
+</head>
+<body>
+<main>
+    <section class="users">
+        <div class="user-container">
+            <div class="user-header">
+                <div class="user-cell">Id</div>
+                <div class="user-cell">Name</div>
+                <div class="user-cell">Phone</div>
+                <div class="user-cell">Email</div>
+            </div>
+            <div th:each="tempUser : ${users}" class="user-row">
+                <div class="user-cell" th:text="${tempUser.id}"></div>
+                <div class="user-cell" th:text="${tempUser.username}"></div>
+                <div class="user-cell" th:text="${tempUser.phone}"></div>
+                <div class="user-cell" th:text="${tempUser.email}"></div>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

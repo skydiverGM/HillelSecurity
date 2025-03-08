@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <link rel="stylesheet" th:href="@{/css/makeup.css}">
+</head>
+<body>
+<main>
+    <section class="login">
+        <h2>Login:</h2>
+        <form th:action="@{/authNgo}" th:object="${loginDTO}" method="POST">
+            <label>Username:</label>
+            <div class="form-group">
+                <input type="text" th:field="*{username}" placeholder="Username">
+                <span class="error" th:if="${#fields.hasErrors('username')}" th:errors="*{'username'}"></span>
+            </div>
+            <label>Password:</label>
+            <div class="form-group">
+                <input type="password" th:field="*{password}" placeholder="Password">
+                <span class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{'password'}"></span>
+            </div>
+            <input type="submit" value="Go!">
+        </form>
+    </section>
+</main>
+</body>
+</html>
