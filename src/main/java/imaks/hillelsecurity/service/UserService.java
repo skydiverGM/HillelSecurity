@@ -41,16 +41,12 @@ public class UserService {
         return userRepo.save(user);
     }
 
-    public String authenticate(AuthDTO dto) {
-        try{
+    public String authenticate(AuthDTO dto) throws BadCredentialsException {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(dto.getUsername(), dto.getPassword())
             );
             UserDetails userDetails = (UserDetails) authentication.getPrincipal();
             return jwtService.generateToken(userDetails.getUsername());
-        }catch (BadCredentialsException e){
-            throw new BadCredentialsException("Invalid username or password");
-        }
     }
 
     public User findByUsername(String username) {
@@ -64,5 +60,9 @@ public class UserService {
 
     public List<User> getAll() {
         return userRepo.findAll();
+    }
+
+    public void delete(Long id) {
+        userRepo.deleteById(id);
     }
 }
